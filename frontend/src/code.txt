@@ -1,0 +1,45 @@
+    const [ans, setAns] = useState();
+    const [formData, setFormData] = useState({
+        num1:0, num2:0, op : ""
+    });
+
+    const sendData = () => {
+        const num1 = parseInt(document.getElementById("num1").value, 10);
+        const num2 = parseInt(document.getElementById("num2").value, 10);
+        const op = document.getElementById("operand").value;
+        
+        if(!num1 || !num2 || !op)
+        {
+          alert('Please enter data');
+        }
+        else{
+            setFormData({
+                num1:num1,
+                num2:num2,
+                op:op
+            })
+            apiCall();
+        }
+    }
+
+    const apiCall = async() => {
+        try {
+          if(formData)
+          {
+            await axios.post("http://localhost:8000/auth/data", formData).then((res) => {
+                console.log(res);
+                if(res.data.success)
+                {
+                    setAns(res.data.ans);
+                    console.log(ans);
+                    document.getElementById("ansVal").innerHTML = ans;
+                }
+                else{
+                    console.log("getting error");
+                }
+            })
+          }
+        } catch (error) {
+            console.log(error);
+        }
+    }

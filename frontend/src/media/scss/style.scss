@@ -1,0 +1,28 @@
+.calculator{
+    background-color:rgb(150, 6, 6);
+    color: white;
+    text-align: center;
+    height: 90vh;
+    padding: 20px;
+    margin-top: 2vh;
+
+    .formData{
+        margin-top: 8vh;
+    }
+    .heading{
+        margin-top: 23vh;
+    }
+    .inputLabel{
+        margin-right: 10px;
+        font-size: larger;
+        font-weight: bold;
+    }
+    .submitButton{
+        margin-top: 2vh;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    .inputNum{
+        color: black;
+    }
+}
