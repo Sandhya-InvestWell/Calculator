@@ -6,7 +6,7 @@ exports.getDataController = (req, res) => {
         {
             return res.status(201).send({
                 success : false,
-                message : "Error in getting data"
+                message : "Error in getting data in the controller"
             })
         }
         let ans;
